@@ -82,13 +82,19 @@ namespace WeatherApp.JobService.Commands
                 int.TryParse(item.SelectSingleNode("div[@class='maxt']/span[@class='unit unit_temperature_c']")?.InnerHtml.Trim().Replace("&minus;", "-"), out var maxTemp);
                 int.TryParse(item.SelectSingleNode("div[@class='mint']/span[@class='unit unit_temperature_c']")?.InnerHtml.Trim().Replace("&minus;", "-"), out var minTemp);
 
-                var weatherData = new WeatherData { CityId = city.Id, DateUtc = date, MaxTemp = maxTemp, MinTemp = minTemp };
+
+                var weatherData = await DbContext.WeatherData.FirstOrDefaultAsync(x => x.CityId == city.Id && x.DateUtc == date);
+
+                if (weatherData == null)
+                {
+                    weatherData = new WeatherData { CityId = city.Id, DateUtc = date };
+                    DbContext.WeatherData.Add(weatherData);
+                }
+
+                weatherData.MaxTemp = maxTemp;
+                weatherData.MinTemp = minTemp;
 
                 date = date.AddDays(1);
-
-                if (await DbContext.WeatherData.AnyAsync(x => x.CityId == weatherData.CityId && x.DateUtc == weatherData.DateUtc)) continue;
-
-                DbContext.WeatherData.Add(weatherData);
             }
 
             await DbContext.SaveChangesAsync();
