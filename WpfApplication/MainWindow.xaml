@@ -1,0 +1,51 @@
+﻿<Window x:Class="WeatherApp.WpfApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        mc:Ignorable="d"
+        Title="Weather App" Height="150" Width="600" Initialized="MainWindow_OnInitialized">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Label Content="Город" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+            <ComboBox Name="CbCity" HorizontalAlignment="Left" Margin="60,14,0,0" VerticalAlignment="Top" Width="200" DisplayMemberPath="Name" SelectionChanged="CbCity_OnSelectionChanged"/>
+
+            <Label Content="Дата" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.682,0.06" FontWeight="Bold"/>
+            <DatePicker Name="DpWeaterDate" HorizontalAlignment="Left" Margin="60,50,0,0" VerticalAlignment="Top" Width="200" SelectedDateChanged="DpWeaterDate_OnSelectedDateChanged"/>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Content="Температура" HorizontalAlignment="Center" VerticalAlignment="Top" Height="107" Width="86" FontWeight="Bold"/>
+                
+                <Label Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Content="Макс." HorizontalAlignment="Left" VerticalAlignment="Top" Height="28" Width="86" FontWeight="Bold"/>
+                <Label Grid.Column="1" Grid.Row="0" Name="LblMaxTemp" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Top" Height="28" Width="86"/>
+                
+                <Label Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Content="Мин." HorizontalAlignment="Left" VerticalAlignment="Top" Height="28" Width="86" FontWeight="Bold"/>
+                <Label Grid.Column="1" Grid.Row="1" Name="LblMinTemp" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Top" Height="28" Width="86"/>
+
+            </Grid>
+        </Grid>
+
+        <fa:ImageAwesome Name="Loading" Visibility="Hidden" Icon="Refresh" Spin="True" Height="48" Width="48" />
+    </Grid>
+
+</Window>

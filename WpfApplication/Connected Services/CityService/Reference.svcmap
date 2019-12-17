@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c25f060a-6119-4901-b7fb-7946402197b5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8888/Services/CityService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CityService.xsd" MetadataType="Schema" ID="fed16884-9d89-4445-9efe-7522e324a47e" SourceId="1" SourceUrl="http://localhost:8888/Services/CityService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CityService1.xsd" MetadataType="Schema" ID="fa547057-51ef-4237-8599-faecb297ac57" SourceId="1" SourceUrl="http://localhost:8888/Services/CityService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CityService2.xsd" MetadataType="Schema" ID="33877523-2cdd-4a5a-b480-de48227d4aef" SourceId="1" SourceUrl="http://localhost:8888/Services/CityService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CityService.disco" MetadataType="Disco" ID="b4ec9e5f-96ca-4794-a6b0-380507ad828f" SourceId="1" SourceUrl="http://localhost:8888/Services/CityService.svc?disco" />
+    <MetadataFile FileName="CityService.wsdl" MetadataType="Wsdl" ID="9889dfee-5696-4b74-ae2a-cfaa92c397aa" SourceId="1" SourceUrl="http://localhost:8888/Services/CityService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
