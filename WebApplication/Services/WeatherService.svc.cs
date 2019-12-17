@@ -10,7 +10,7 @@ namespace WeatherApp.WebApplication.Services
     {
         public async Task<WeatherDataViewModel> GetWeatherDataAsync(long cityId, DateTime date)
         {
-            using (var dbContext = new ApplicationDbContext())
+            using (var dbContext = new ApplicationDbContext("DefaultConnection"))
             {
                 var data = await dbContext.WeatherData.FirstOrDefaultAsync(x => x.CityId == cityId && x.DateUtc == date.Date);
 

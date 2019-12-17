@@ -26,7 +26,7 @@ namespace WeatherApp.JobService
 
         private static void ConfigureServices(IServiceCollection serviceCollection)
         {
-            serviceCollection.AddTransient<ApplicationDbContext>();
+            serviceCollection.AddTransient(provider => new ApplicationDbContext("DefaultConnection"));
 
             serviceCollection.AddTransient<GrabPopularCitiesWeatherCommand>();
 

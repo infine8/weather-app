@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 using MySql.Data.EntityFramework;
 using WeatherApp.DAL.Models;
 
@@ -15,7 +10,7 @@ namespace WeatherApp.DAL
         public DbSet<City> Cities { get; set; }
         public DbSet<WeatherData> WeatherData { get; set; }
 
-        public ApplicationDbContext() : base("DefaultConnection")
+        public ApplicationDbContext(string connectionString) : base(connectionString)
         {
             Configuration.ValidateOnSaveEnabled = false;
         }

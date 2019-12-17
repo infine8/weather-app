@@ -11,7 +11,7 @@ namespace WeatherApp.WebApplication.Services
     {
         public async Task<IEnumerable<CityViewModel>> GetCityListAsync()
         {
-            using (var dbContext = new ApplicationDbContext())
+            using (var dbContext = new ApplicationDbContext("DefaultConnection"))
             {
                 var data = await dbContext.Cities.ToListAsync();
 
